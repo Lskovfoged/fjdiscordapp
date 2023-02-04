@@ -84,7 +84,7 @@ class Kernel extends ConsoleKernel
 				$slack->title    = '';
 				
                 $slack->username =   "Big Sister";
-                $slack->avatar   =   'https://i.imgur.com/xEUNwuN.png';
+                $slack->avatar   =   'https://media.discordapp.net/attachments/529709412672339978/1071538188277002392/Sweetjesuschrist_8e96bc164b97723255532a94c678a50d.png';
                 $slack->text     = '<@&427487027429244929>  Rate or no bonewhip for you!';
                 
 				if($r->sfw > 40){
@@ -121,6 +121,13 @@ class Kernel extends ConsoleKernel
 					$slack->username = "Walcorn the Trap Boi";
 					$slack->avatar   = 'https://i.imgur.com/8Gn5cs7.png';
 					$slack->text     = 'Sucking penis until all rates have been completed. @here';
+				}
+
+                if($r->sfw > 140){
+					$slack->username = "WTF too many";
+					$slack->avatar   = 'https://i.imgur.com/8Gn5cs7.png';
+					$slack->text     = 'Walcorn what the fuck is wrong with you @here';
+                    $slack->image_url = 'https://media.discordapp.net/attachments/529709412672339978/1071535051344453793/whererates.png';
 				}
                 
 				$slack->embedFields = [ 'SFW' => $r->sfw,
