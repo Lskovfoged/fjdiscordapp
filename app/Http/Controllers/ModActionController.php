@@ -362,7 +362,7 @@ class ModActionController extends Controller
             $slack->username = 'Executive Whip';
             $slack->avatar = 'https://i.imgur.com/876EUYE.png';
             $slack->title = "Ratings Too High";
-            $slack->text = 'Unresolved conflicts is at ' . $unratedContent . ' <@!190931518321983499> :gay_pride_flag: <@!191311168835420162> ';
+            $slack->text = 'Unresolved conflicts is at ' . $unratedContent . ' <@!185620305983700994> :gay_pride_flag: <@!191311168835420162> ';
             $slack->embedFields = [];
             $slack->footer = "Review: https://fjme.me/mods/ratings/nobody";
             $slack->color = "warning";
