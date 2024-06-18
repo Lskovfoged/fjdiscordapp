@@ -309,48 +309,48 @@ class ModActionController extends Controller
                         $patrol->markAsPatrolled($chunk->get('user_id'), true);
                 }
 
-                if($action->modifier != null && $action->modifier > 1)
-                {
-                     $action->addNote('fjmeme_parser_message', 'Issue raised due to modifier usage');
-                        $slack = new Slack;
-                        $slack->target = 'mod-notify';
-                        $slack->username = 'Jeff Beezos';
-                        $slack->avatar = 'https://i.imgur.com/ANa87p5.png';
-                        $slack->title = 'Modifier Used';
-                        $slack->text = 'I have encountered a modifier being used <@&299311804113354763> ' . $action->url;
-                        $slack->embedFields = ['Modifier' => $action->modifier];
-                        $slack->color = "warning";
-                        try {
-                            \Notification::send($slack, new \App\Notifications\ModNotify(null));
-                        } catch (Exception $e) {
-                            $action->addNote('fjmeme_parser_error', "EXCEPTION: $e");
-                        }
-                }
+                //if($action->modifier != null && $action->modifier > 1)
+                //{
+                     //$action->addNote('fjmeme_parser_message', 'Issue raised due to modifier usage');
+                        //$slack = new Slack;
+                        //$slack->target = 'mod-notify';
+                        //$slack->username = 'Jeff Beezos';
+                        //$slack->avatar = 'https://i.imgur.com/ANa87p5.png';
+                        //$slack->title = 'Modifier Used';
+                        //$slack->text = 'I have encountered a modifier being used <@&299311804113354763> ' . $action->url;
+                        //$slack->embedFields = ['Modifier' => $action->modifier];
+                        //$slack->color = "warning";
+                        //try {
+                            //\Notification::send($slack, new \App\Notifications\ModNotify(null));
+                        //} catch (Exception $e) {
+                            //$action->addNote('fjmeme_parser_error', "EXCEPTION: $e");
+                        //}
+                //}
                 
-                if(
-                    in_array(
-                        $chunk->get('category'), 
-                        [
-                         'mod_remove',
-                         'mod_add'
-                        ]
-                    )
-                ){
-                    try{
-                        $slack = new Slack;
-                        $slack->target = 'mod-notify';
-                        $slack->username = 'Moderation Supervisor';
-                        $slack->avatar = 'https://i.imgur.com/9u7JJeX.png';
-                        $slack->title = 'Administrative action detected';
-                        $slack->text =  $chunk->get('info') . ' <@!66277163090841600> <@!222275959066329088> if this is a demod and there isnt a correspodning mod-social announcement, tell EdwardNigma to do it properly. ' . $chunk->get('url');
-                        $slack->embedFields = ['Modifier' => $chunk->get('category')];
-                        $slack->color = "warning";
-                        \Notification::send($slack, new \App\Notifications\ModNotify(null));
-                    } catch(Exception $e)
-                    {
-                        logger()->emergency('Notification failure', ['Notification failed', $chunk]);
-                    }
-                }
+                //if(
+                    //in_array(
+                        //$chunk->get('category'), 
+                        //[
+                         //'mod_remove',
+                         //'mod_add'
+                        //]
+                    //)
+                //){
+                    //try{
+                        //$slack = new Slack;
+                        //$slack->target = 'mod-notify';
+                        //$slack->username = 'Moderation Supervisor';
+                        //$slack->avatar = 'https://i.imgur.com/9u7JJeX.png';
+                        //$slack->title = 'Administrative action detected';
+                        //$slack->text =  $chunk->get('info') . ' <@!66277163090841600> <@!222275959066329088> if this is a demod and there isnt a correspodning mod-social announcement, tell EdwardNigma to do it properly. ' . $chunk->get('url');
+                        //$slack->embedFields = ['Modifier' => $chunk->get('category')];
+                        //$slack->color = "warning";
+                        //\Notification::send($slack, new \App\Notifications\ModNotify(null));
+                    //} catch(Exception $e)
+                    //{
+                        //logger()->emergency('Notification failure', ['Notification failed', $chunk]);
+                    //}
+                //}
             }
         });
 
