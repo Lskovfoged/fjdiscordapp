@@ -249,7 +249,7 @@ class ModActionController extends Controller
                         case 'unflag':
                             $content->flagged_as = null;
                             $content->hasIssue = true;
-                            $action->addNote('fjmeme_parser_message', 'Issue raised due to content unflag');
+                            //$action->addNote('fjmeme_parser_message', 'Issue raised due to content unflag');
                             break;
                     }
 
