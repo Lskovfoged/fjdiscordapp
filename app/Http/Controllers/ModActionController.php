@@ -287,19 +287,19 @@ class ModActionController extends Controller
                     }
 
                     //If raised issue flag
-                    if($content->getOriginal('hasIssue') == 0 && $content->hasIssue == true)
-                    {
-                        $slack = new Slack;
-                        $slack->target = 'mod-notify';
-                        $slack->username = 'Ratings Parser';
-                        $slack->avatar = 'https://i.imgur.com/RoZ6aLY.jpg';
-                        $slack->title = $content->title;
-                        $slack->text = 'I have encountered an issue <@&790627250415599639>';
-                        $slack->embedFields = ['Content ID' => $content->id, 'Issue' => $action->info];
-                        $slack->footer = "Review: https://fjme.me/mods/contentInfo/" . $content->id;
-                        $slack->color = "error";
-                        \Notification::send($slack, new \App\Notifications\ModNotify(null));
-                    }
+                    //if($content->getOriginal('hasIssue') == 0 && $content->hasIssue == true)
+                    //{
+                    //    $slack = new Slack;
+                    //    $slack->target = 'mod-notify';
+                    //    $slack->username = 'Ratings Parser';
+                    //    $slack->avatar = 'https://i.imgur.com/RoZ6aLY.jpg';
+                    //    $slack->title = $content->title;
+                    //    $slack->text = 'I have encountered an issue <@&790627250415599639>';
+                    //    $slack->embedFields = ['Content ID' => $content->id, 'Issue' => $action->info];
+                    //    $slack->footer = "Review: https://fjme.me/mods/contentInfo/" . $content->id;
+                    //    $slack->color = "error";
+                    //    \Notification::send($slack, new \App\Notifications\ModNotify(null));
+                    //}
                     $content->save();
                 }
 
