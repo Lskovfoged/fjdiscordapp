@@ -55,7 +55,11 @@
         @foreach($contents as $content)
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <a href="https://funnyjunk.com/{{$content->url}}">{{$content->title}}</a> @ <a href="{{route('moderator.contentInfo', $content->id)}}">{{$content->id}}</a>
+                    @php
+                        // Check if the URL is a full URL or a relative path
+                        $url = (strpos($content->url, 'http') === 0) ? $content->url : 'https://funnyjunk.com' . $content->url;
+                    @endphp
+                    <a href="{{$url}}">{{$content->title}}</a> @ <a href="{{route('moderator.contentInfo', $content->id)}}">{{$content->id}}</a>
                 </div>
                 <div class="panel-body">
                     <span class="badge">PC {{$content->rating_pc}}</span>
