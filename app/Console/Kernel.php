@@ -80,55 +80,54 @@ class Kernel extends ConsoleKernel
             if($r->sfw > 30 && $isIncreasing)
             {
                 $slack = new \App\Slack;
-                $slack->target = 'mod-social';
-				$slack->title    = '';
-				
-                $slack->username =   "Big Sister";
-                $slack->avatar   =   'https://media.discordapp.net/attachments/529709412672339978/1071538188277002392/Sweetjesuschrist_8e96bc164b97723255532a94c678a50d.png';
-                $slack->text     = '<@&427487027429244929>  Rate or no bonewhip for you!';
+                $slack->target = 'mod-notify';
+                $slack->title    = '';
+                                
+                $slack->username = "Big Sister";
+                $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/bigsister.png';
+                $slack->text     = '<@&427487027429244929> Rate or no bonewhip for you!';
                 
-				if($r->sfw > 40){
-					$slack->username =   "The rating doge";
-					$slack->avatar   =   'https://i.imgur.com/HeGEEbu.jpg';
-					$slack->text     = 	 "<:OkRetard1:625111286887219200><:OkRetard2:625111299713400832> \n <:OkRetard3:625111313688821760><:OkRetard4:625111326091640833> <@&427487027429244929> wow, much moderators, many rate, very content! ";
-				}
+                if($r->sfw > 40){
+                    $slack->username = "The rating doge";
+                    $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/HeGEEbu.jpeg';
+                    $slack->text     = "<:OkRetard1:625111286887219200><:OkRetard2:625111299713400832> \n<:OkRetard3:625111313688821760><:OkRetard4:625111326091640833> \n<@&427487027429244929> wow, much moderators, many rate, very content! ";
+                }
 				
-				if($r->sfw > 50){
-					$slack->username =   "🅱️osttwo";
-					$slack->avatar   =   'https://i.imgur.com/bV0pD76.png';
-                    			$slack->text     =   'Mmmmmmm Im pissing and shidding and farding and cumming on you until you rate <@&305827361767817216> <@&137342300723478528> <@&151904749984284672> **Students with a cap above 20 are allowed ignore their cap and rate until all content is rated** <@&360253414120095745> is also expected to work';
-				}
+                if($r->sfw > 50){
+                    $slack->username = "FAG";
+                    $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/sep-FOG.png';
+                    $slack->text     = 'Can someone please rate <@&427487027429244929>';
+                }
 				
-				if($r->sfw > 60){
-					$slack->username = "Tails Miles Prower";
-					$slack->avatar   = 'https://i.imgur.com/D6iDCnR.png';
-					$slack->text     = '<:administyping1:675616130097741835><:administyping2:675616141342801940><:administyping3:675616149668495360><:administyping4:675616159843876864><:administyping5:675616170224910337> Can someone please rate';
-				}
+                if($r->sfw > 60){
+                    $slack->username = "🅱️osttwo";
+                    $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/bV0pD76.png';
+                    $slack->text     = 'Mmmmmmm Im pissing and shidding and farding and cumming on you until you rate <@&427487027429244929>';
+                }
 		    
-		    		if($r->sfw > 70){
-					$slack->username = "Helpfuls Ressurection";
-					$slack->avatar   = 'https://i.imgur.com/EyptcJP.png';
-					$slack->text     = '@here The needs of the many outweigh the needs of the few. Remodding <@156717038570700800> in progress';
-				}
+                if($r->sfw > 70){
+                    $slack->username = "Helpfuls Ressurection";
+                    $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/Zin2.png';
+                    $slack->text     = '@here The needs of the many outweigh the needs of the few. Remodding <@470179706164215819> in progress';
+                }
 		    
-				if($r->sfw > 80){
-					$slack->username = "Containment Breach Alert";
-					$slack->avatar   = 'https://imgur.com/uHqeo04.png';
-					$slack->text     = '<:stewfoot:661149931398103050> Hey @here . I am coming for them toes until the rates go down.';
-				}
+                if($r->sfw > 80){
+                    $slack->username = "Admin";
+                    $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/adminpfp.png';
+                    $slack->text     = "<:administyping1:675616130097741835><:administyping2:675616141342801940><:administyping3:675616149668495360><:administyping4:675616159843876864><:administyping5:675616170224910337> \n@here start rating or I will start demodding";
+                }
 		    
-				if($r->sfw > 100){
-					$slack->username = "Walcorn the Trap Boi";
-					$slack->avatar   = 'https://i.imgur.com/8Gn5cs7.png';
-					$slack->text     = 'Sucking penis until all rates have been completed. @here';
-				}
+                if($r->sfw > 100){
+                    $slack->username = "Walcorn the Trap Boi";
+                    $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/294ca7accd36c7a5f0654eec953315be.png';
+                    $slack->text     = 'Sucking penis until all rates have been completed. @here';
+                }
 
                 if($r->sfw > 140){
-					$slack->username = "WTF too many";
-					$slack->avatar   = 'https://i.imgur.com/8Gn5cs7.png';
-					$slack->text     = 'Walcorn what the fuck is wrong with you @here';
-                    $slack->image_url = 'https://media.discordapp.net/attachments/529709412672339978/1071535051344453793/whererates.png';
-				}
+                    $slack->username = "WTF too many";
+                    $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/294ca7accd36c7a5f0654eec953315be.png';
+                    $slack->text     = 'Walcorn what the fuck is wrong with you @here';
+                }
                 
 				$slack->embedFields = [ 'SFW' => $r->sfw,
                                         'NSFW' => $r->nsfw,
