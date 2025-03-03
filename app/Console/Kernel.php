@@ -108,7 +108,7 @@ class Kernel extends ConsoleKernel
                 if($r->sfw > 100){
                     $slack->username = "Helpfuls Ressurection";
                     $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/Zin2.png';
-                    $slack->text     = '@here The needs of the many outweigh the needs of the few. Remodding <@470179706164215819> in progress';
+                    $slack->text     = '<@&427487027429244929> The needs of the many outweigh the needs of the few. Remodding <@470179706164215819> in progress';
                 }
 		    
                 if($r->sfw > 110){
