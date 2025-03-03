@@ -137,7 +137,7 @@ class Kernel extends ConsoleKernel
             }
             \Cache::forever("Cron-SFW_COUNT", $r->sfw);
             
-        })->everyFiveMinutes();
+        })->hourly();
         
         $schedule->call(function () {
             if(\Cache::get('CRON-sameip', true) == false) return;
