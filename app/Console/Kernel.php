@@ -77,7 +77,7 @@ class Kernel extends ConsoleKernel
       	    $r->sfw = $r->sfwNOW;
             $isIncreasing = $r->sfw > $lastCall;
             //$r -> sfw nsfw links
-            if($r->sfw > 30 && $isIncreasing)
+            if($r->sfw > 60 && $isIncreasing)
             {
                 $slack = new \App\Slack;
                 $slack->target = 'mod-notify';
@@ -87,37 +87,37 @@ class Kernel extends ConsoleKernel
                 $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/bigsister.png';
                 $slack->text     = '<@&427487027429244929> Rate or no bonewhip for you!';
                 
-                if($r->sfw > 40){
+                if($r->sfw > 70){
                     $slack->username = "The rating doge";
                     $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/HeGEEbu.jpeg';
                     $slack->text     = "<:OkRetard1:625111286887219200><:OkRetard2:625111299713400832> \n<:OkRetard3:625111313688821760><:OkRetard4:625111326091640833> \n<@&427487027429244929> wow, much moderators, many rate, very content! ";
                 }
 				
-                if($r->sfw > 50){
+                if($r->sfw > 80){
                     $slack->username = "FAG";
                     $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/sep-FOG.png';
                     $slack->text     = 'Can someone please rate <@&427487027429244929>';
                 }
 				
-                if($r->sfw > 60){
+                if($r->sfw > 90){
                     $slack->username = "🅱️osttwo";
                     $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/bV0pD76.png';
                     $slack->text     = 'Mmmmmmm Im pissing and shidding and farding and cumming on you until you rate <@&427487027429244929>';
                 }
 		    
-                if($r->sfw > 70){
+                if($r->sfw > 100){
                     $slack->username = "Helpfuls Ressurection";
                     $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/Zin2.png';
                     $slack->text     = '@here The needs of the many outweigh the needs of the few. Remodding <@470179706164215819> in progress';
                 }
 		    
-                if($r->sfw > 80){
+                if($r->sfw > 110){
                     $slack->username = "Admin";
                     $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/adminpfp.png';
                     $slack->text     = "<:administyping1:675616130097741835><:administyping2:675616141342801940><:administyping3:675616149668495360><:administyping4:675616159843876864><:administyping5:675616170224910337> \n@here start rating or I will start demodding";
                 }
 		    
-                if($r->sfw > 100){
+                if($r->sfw > 120){
                     $slack->username = "Walcorn the Trap Boi";
                     $slack->avatar   = 'https://edu.fjme.me/uploads/images/gallery/2025-03/294ca7accd36c7a5f0654eec953315be.png';
                     $slack->text     = 'Sucking penis until all rates have been completed. @here';
