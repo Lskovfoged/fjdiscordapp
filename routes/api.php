@@ -82,6 +82,8 @@ Route::group(['middleware' => 'throttle:60,1,1'], function(){
 
 	Route::get('/mods/userflags/getUnpatrolled', 'UserFlagController@getCount')->middleware(['auth:api', 'role:mod.isAMod', 'scope:fjmod-token']);
 	Route::get('/mods/userflags/getByUserId/{id}', 'UserFlagController@getByUserId')->middleware(['auth:api', 'role:mod.isAMod', 'scope:fjmod-token']);
+	Route::get('/mods/userflags/reviewed', 'API\UserFlagController@getReviewedUserFlags')->middleware(['auth:api', 'scope:fjapi-userinfo-mod', 'role:mod.isAMod']);
+	Route::get('/mods/userflags/unreviewed', 'API\UserFlagController@getUnreviewedUserFlags')->middleware(['auth:api', 'scope:fjapi-userinfo-mod', 'role:mod.isAMod']);
 	//Content Review
 
 	Route::get('/ratings/{fjusername}', 'ModActionController@getNextContentNeedingReview')->middleware(['auth:api', 'scope:fjmeme-change-user', 'role:mod.ratingReviewer']);
